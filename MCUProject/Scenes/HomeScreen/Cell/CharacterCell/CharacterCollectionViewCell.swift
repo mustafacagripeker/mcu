@@ -6,12 +6,25 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CharacterCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet var characterImageView: UIImageView!
+    @IBOutlet var characterNameLabel: UILabel!
+    @IBOutlet var likeButton: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
+        
+    }
+    
+    func bind(imageUrl : String , characterName : String){
+        
+        characterNameLabel.text = characterName
+        characterImageView.sd_setImage(with: URL(string: imageUrl))
+        
     }
 
 }

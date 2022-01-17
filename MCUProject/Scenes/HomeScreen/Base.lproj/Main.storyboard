@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="131"/>
+            <point key="canvasLocation" x="-1052" y="131"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="EVa-M3-DcN">
@@ -47,22 +47,74 @@
                     <view key="view" contentMode="scaleToFill" id="1rx-fu-Zdy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iBZ-DF-rYa">
+                                <rect key="frame" x="0.0" y="118" width="414" height="778"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JAL-44-y9u">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Marvel_Logo.svg" translatesAutoresizingMaskIntoConstraints="NO" id="fhR-Ro-UfT">
+                                <rect key="frame" x="50" y="52" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="tw6-Ne-57s"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="gnY-ja-cED"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="iBZ-DF-rYa" secondAttribute="bottom" id="3eZ-ke-JMB"/>
+                            <constraint firstItem="iBZ-DF-rYa" firstAttribute="leading" secondItem="gnY-ja-cED" secondAttribute="leading" id="8t1-zg-4T2"/>
+                            <constraint firstItem="fhR-Ro-UfT" firstAttribute="leading" secondItem="gnY-ja-cED" secondAttribute="leading" constant="50" id="OeX-xs-NdK"/>
+                            <constraint firstItem="gnY-ja-cED" firstAttribute="trailing" secondItem="iBZ-DF-rYa" secondAttribute="trailing" id="fmF-dH-N59"/>
+                            <constraint firstItem="iBZ-DF-rYa" firstAttribute="top" secondItem="fhR-Ro-UfT" secondAttribute="bottom" constant="16" id="oJk-ei-FFc"/>
+                            <constraint firstItem="fhR-Ro-UfT" firstAttribute="top" secondItem="gnY-ja-cED" secondAttribute="top" constant="8" id="p0y-0U-cJb"/>
+                            <constraint firstItem="gnY-ja-cED" firstAttribute="trailing" secondItem="fhR-Ro-UfT" secondAttribute="trailing" constant="50" id="u9l-Pp-VE0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qxO-Av-AbP"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="heroListCollectionView" destination="iBZ-DF-rYa" id="UMK-b2-xf3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HwN-Gf-hfU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2563.768115942029" y="130.58035714285714"/>
+            <point key="canvasLocation" x="2562.3188405797105" y="130.58035714285714"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="0fF-sN-X2L">
+            <objects>
+                <tabBarController storyboardIdentifier="tabbar" modalPresentationStyle="fullScreen" id="eua-yv-qk5" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NqG-IA-MoH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemRedColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="MUf-Jh-ybM" kind="relationship" relationship="viewControllers" id="VaE-jv-YDH"/>
+                        <segue destination="ESS-IJ-LCQ" kind="relationship" relationship="viewControllers" id="fxs-aa-gOF"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ltu-tZ-Qpf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230" y="131"/>
+        </scene>
+        <!--Heroes-->
         <scene sceneID="VOq-hN-dfO">
             <objects>
-                <navigationController storyboardIdentifier="navController" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="MUf-Jh-ybM" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navController" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" navigationBarHidden="YES" id="MUf-Jh-ybM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Heroes" image="unselectedhomemcu" selectedImage="selectedhomemcu" id="07P-MV-Tb2"/>
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wOh-rB-bWU">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -74,10 +126,25 @@
             </objects>
             <point key="canvasLocation" x="1653.6231884057972" y="130.58035714285714"/>
         </scene>
+        <!--favvc-->
+        <scene sceneID="hB5-uN-unT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FavoriteStoryboard" referencedIdentifier="favvc" id="ESS-IJ-LCQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorite" image="unselectedmcu" selectedImage="selectedfavmcu" id="X3e-t8-Sau"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O9e-e6-38I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1636" y="601"/>
+        </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="Marvel_Logo.svg" width="1200" height="482"/>
+        <image name="selectedfavmcu" width="20" height="20"/>
+        <image name="selectedhomemcu" width="20" height="20"/>
+        <image name="unselectedhomemcu" width="20" height="20"/>
+        <image name="unselectedmcu" width="20" height="20"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
